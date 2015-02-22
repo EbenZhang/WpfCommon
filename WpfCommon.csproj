@@ -49,6 +49,7 @@
     </Compile>
     <Compile Include="CompositeConverter.cs" />
     <Compile Include="InverseBooleanConverter.cs" />
+    <Compile Include="MessageBoxHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
