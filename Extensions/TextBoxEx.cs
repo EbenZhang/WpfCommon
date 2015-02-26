@@ -13,6 +13,10 @@ namespace WpfCommon.Extensions
     {
         public static bool Valid(this TextBox tb)
         {
+            if (!tb.IsEnabled || !tb.IsVisible)
+            {
+                return true;
+            }
 			var binding = BindingOperations.GetBinding(tb, TextBox.TextProperty);
             if (binding == null) return true;
 
