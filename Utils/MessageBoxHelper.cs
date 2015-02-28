@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace WpfCommon
+namespace WpfCommon.Utils
 {
     public static class MessageBoxHelper
     {
