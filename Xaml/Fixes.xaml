@@ -14,4 +14,8 @@
     <Style TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
     </Style>
+
+    <Style TargetType="RadioButton">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
 </ResourceDictionary>
