@@ -15,64 +15,69 @@ namespace WpfCommon.Validations
     {
         public static bool Valid(this AutoCompleteBox box)
         {
+            return ValidText(box) && ValidSelectedItem(box);
+        }
+
+        private static bool ValidText(AutoCompleteBox box)
+        {
+            var binding = BindingOperations.GetBinding(box, AutoCompleteBox.TextProperty);
+            if (binding == null) return true;
+
+            var bingdExp = box.GetBindingExpression(AutoCompleteBox.TextProperty);
+            if (bingdExp == null) return true;
+
+            Validation.ClearInvalid(bingdExp);
+
             if (!box.IsEnabled || !box.IsVisible)
             {
                 return true;
             }
-
-            return ValidText(box) && ValidSelectedItem(box);
-        }
-
-        private static bool ValidText(AutoCompleteBox tb)
-        {
-            var binding = BindingOperations.GetBinding(tb, AutoCompleteBox.TextProperty);
-            if (binding == null) return true;
-
-            var bingdExp = tb.GetBindingExpression(AutoCompleteBox.TextProperty);
-            if (bingdExp == null) return true;
-
-            Validation.ClearInvalid(bingdExp);
             foreach (var rule in binding.ValidationRules)
             {
                 var tempRuleForClosureCapture = rule;
-                var validResult = rule.Validate(tb.Text, CultureInfo.CurrentCulture);
+                var validResult = rule.Validate(box.Text, CultureInfo.CurrentCulture);
 
                 if (validResult.IsValid) continue;
 
-                tb.Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(() =>
+                box.Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(() =>
                 {
-                    tb.BringIntoView();
+                    box.BringIntoView();
                     var validationError = new ValidationError(tempRuleForClosureCapture, binding, validResult.ErrorContent, null);
                     Validation.MarkInvalid(bingdExp, validationError);
-                    tb.Focus();
+                    box.Focus();
                 }));
                 return false;
             }
             return true;
         }
 
-        private static bool ValidSelectedItem(AutoCompleteBox tb)
+        private static bool ValidSelectedItem(AutoCompleteBox box)
         {
-            var binding = BindingOperations.GetBinding(tb, AutoCompleteBox.TextProperty);
+            var binding = BindingOperations.GetBinding(box, AutoCompleteBox.TextProperty);
             if (binding == null) return true;
 
-            var bingdExp = tb.GetBindingExpression(AutoCompleteBox.TextProperty);
+            var bingdExp = box.GetBindingExpression(AutoCompleteBox.TextProperty);
             if (bingdExp == null) return true;
+
+            if (!box.IsEnabled || !box.IsVisible)
+            {
+                return true;
+            }
 
             Validation.ClearInvalid(bingdExp);
             foreach (var rule in binding.ValidationRules)
             {
                 var tempRuleForClosureCapture = rule;
-                var validResult = rule.Validate(tb.Text, CultureInfo.CurrentCulture);
+                var validResult = rule.Validate(box.Text, CultureInfo.CurrentCulture);
 
                 if (validResult.IsValid) continue;
 
-                tb.Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(() =>
+                box.Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(() =>
                 {
-                    tb.BringIntoView();
+                    box.BringIntoView();
                     var validationError = new ValidationError(tempRuleForClosureCapture, binding, validResult.ErrorContent, null);
                     Validation.MarkInvalid(bingdExp, validationError);
-                    tb.Focus();
+                    box.Focus();
                 }));
                 return false;
             }
