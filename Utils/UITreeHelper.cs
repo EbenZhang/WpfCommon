@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using WpfCommon.Controls;
 using WpfCommon.Extensions;
 using WpfCommon.Validations;
 
@@ -124,7 +125,7 @@ namespace WpfCommon.Utils
 
         public static bool ValidateAutoCompleteBoxes(this DependencyObject container)
         {
-            var tbs = FindVisualChildren<AutoCompleteBox>(container);
+            var tbs = FindVisualChildren<AutoCompleteBoxEx>(container);
             return tbs.All(tb => tb.Valid());
         }
     }
