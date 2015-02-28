@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using WpfCommon.Extensions;
+using WpfCommon.Validations;
 
 namespace WpfCommon.Utils
 {
@@ -118,6 +119,12 @@ namespace WpfCommon.Utils
         public static bool ValidateTextBoxes(this DependencyObject container)
         {
             var tbs = FindVisualChildren<TextBox>(container);
+            return tbs.All(tb => tb.Valid());
+        }
+
+        public static bool ValidateAutoCompleteBoxes(this DependencyObject container)
+        {
+            var tbs = FindVisualChildren<AutoCompleteBox>(container);
             return tbs.All(tb => tb.Valid());
         }
     }
