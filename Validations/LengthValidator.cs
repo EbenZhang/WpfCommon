@@ -19,8 +19,7 @@ namespace WpfCommon.Validations
                 throw new NullReferenceException("Min Length Is Required");
             }
 
-            var str = (string)value;
-            Debug.Assert(str != null, "str != null");
+            var str = (string)value ?? "";
             return str.Length < MinLength ? new ValidationResult(false, string.Format("Minimal Length Is {0}", MinLength))
                 : new ValidationResult(true, null);
         }
