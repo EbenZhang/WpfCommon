@@ -33,7 +33,7 @@ namespace WpfCommon.Controls
             {
                 if (!textbox.IsFocused)
                 {
-                    textbox.Focus();
+                    Dispatcher.BeginInvoke(new Action(() => textbox.Focus()));
                 }
                 textbox.MaxLength = MaxLength;
             }
