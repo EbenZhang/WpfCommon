@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Controls\AutoCompleteBoxEx.cs" />
     <Compile Include="Controls\AutoSizedGridView.cs" />
+    <Compile Include="Converter\FalseToHiddenConverter.cs" />
     <Compile Include="Converter\NullEmptyToFalseConverter.cs" />
     <Compile Include="Utils\SystemMenu.cs" />
     <Compile Include="Xaml\CircularProgressBar.xaml.cs">
