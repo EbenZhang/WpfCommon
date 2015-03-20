@@ -1,32 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Reflection;
-using System.Text;
 using System.Windows;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Drawing;
 using System.Windows.Forms;
-using WebBrowser = System.Windows.Controls.WebBrowser;
-
-//For Icon
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
 
 namespace WpfCommon.Controls
 {
     /// <summary>
-    /// Interaction logic for AboutDialog.xaml
+    ///     Interaction logic for AboutDialog.xaml
     /// </summary>
     public partial class AboutDialog : Window
     {
-        public static readonly DependencyProperty ApplicationNameAndVersionProperty = DependencyProperty.Register("ApplicationNameAndVersion", typeof (object), typeof (AboutDialog), new PropertyMetadata(default(object)));
-        public static readonly DependencyProperty CopyrightProperty = DependencyProperty.Register("Copyright", typeof (object), typeof (AboutDialog), new PropertyMetadata(default(object)));
+        public static readonly DependencyProperty ApplicationNameAndVersionProperty =
+            DependencyProperty.Register("ApplicationNameAndVersion", typeof (object), typeof (AboutDialog),
+                new PropertyMetadata(default(object)));
+
+        public static readonly DependencyProperty CopyrightProperty = DependencyProperty.Register("Copyright",
+            typeof (object), typeof (AboutDialog), new PropertyMetadata(default(object)));
+
+        public static readonly DependencyProperty IsLoadingProperty = DependencyProperty.Register("IsLoading",
+            typeof (bool),
+            typeof (AboutDialog), new PropertyMetadata(false));
+
+        private bool _isLoading;
 
         public AboutDialog()
         {
@@ -36,21 +33,18 @@ namespace WpfCommon.Controls
             Copyright = fvi.LegalCopyright;
 
             var icon = System.Drawing.Icon.ExtractAssociatedIcon(Process.GetCurrentProcess().MainModule.FileName);
-            this.Icon = System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(
+            Icon = Imaging.CreateBitmapSourceFromHIcon(
                 icon.Handle,
                 new Int32Rect(0, 0, icon.Width, icon.Height),
                 BitmapSizeOptions.FromEmptyOptions());
 
             InitializeComponent();
-            this.Loaded += (sender, args) =>
-            {
-                WebBrowser.DocumentText = HtmlDescription;
-            };
+            Loaded += (sender, args) => { WebBrowser.DocumentText = HtmlDescription; };
         }
 
         public object ApplicationNameAndVersion
         {
-            get { return (object) GetValue(ApplicationNameAndVersionProperty); }
+            get { return GetValue(ApplicationNameAndVersionProperty); }
             set { SetValue(ApplicationNameAndVersionProperty, value); }
         }
 
@@ -58,23 +52,26 @@ namespace WpfCommon.Controls
 
         public object Copyright
         {
-            get { return (object) GetValue(CopyrightProperty); }
+            get { return GetValue(CopyrightProperty); }
             set { SetValue(CopyrightProperty, value); }
+        }
+
+        public bool IsLoading
+        {
+            get { return (bool)GetValue(IsLoadingProperty); }
+            set { SetValue(IsLoadingProperty, value); }
         }
 
         private void WebBrowser_OnDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            var wb = (System.Windows.Forms.WebBrowser)sender;
+            var wb = (WebBrowser) sender;
             wb.ScriptErrorsSuppressed = true;
+            IsLoading = false;
         }
 
         private void WebBrowser_OnNavigating(object sender, WebBrowserNavigatingEventArgs e)
         {
-            if (!e.Url.ToString().StartsWith("about:blank"))
-            {
-                e.Cancel = true;
-                Process.Start(e.Url.ToString());
-            }
+            IsLoading = true;
         }
     }
 }
