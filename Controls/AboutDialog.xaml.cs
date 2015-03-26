@@ -19,12 +19,6 @@ namespace WpfCommon.Controls
         public static readonly DependencyProperty CopyrightProperty = DependencyProperty.Register("Copyright",
             typeof (object), typeof (AboutDialog), new PropertyMetadata(default(object)));
 
-        public static readonly DependencyProperty IsLoadingProperty = DependencyProperty.Register("IsLoading",
-            typeof (bool),
-            typeof (AboutDialog), new PropertyMetadata(false));
-
-        private bool _isLoading;
-
         public AboutDialog()
         {
             var assembly = Assembly.GetEntryAssembly();
@@ -39,7 +33,7 @@ namespace WpfCommon.Controls
                 BitmapSizeOptions.FromEmptyOptions());
 
             InitializeComponent();
-            Loaded += (sender, args) => { WebBrowser.DocumentText = HtmlDescription; };
+            Loaded += (sender, args) => { WebBrowser.HtmlContent = HtmlDescription; };
         }
 
         public object ApplicationNameAndVersion
@@ -54,24 +48,6 @@ namespace WpfCommon.Controls
         {
             get { return GetValue(CopyrightProperty); }
             set { SetValue(CopyrightProperty, value); }
-        }
-
-        public bool IsLoading
-        {
-            get { return (bool)GetValue(IsLoadingProperty); }
-            set { SetValue(IsLoadingProperty, value); }
-        }
-
-        private void WebBrowser_OnDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            var wb = (WebBrowser) sender;
-            wb.ScriptErrorsSuppressed = true;
-            IsLoading = false;
-        }
-
-        private void WebBrowser_OnNavigating(object sender, WebBrowserNavigatingEventArgs e)
-        {
-            IsLoading = true;
         }
     }
 }

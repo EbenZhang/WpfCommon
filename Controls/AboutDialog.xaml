@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:converter="clr-namespace:WpfCommon.Converter"
+        xmlns:controls="clr-namespace:WpfCommon.Controls"
         ShowInTaskbar="False"
         mc:Ignorable="d" 
         x:Name="ThisWnd"
@@ -31,28 +32,8 @@
         </Grid>
         <Separator Grid.Row="1" Height="2"></Separator>
         <Border BorderThickness="2" BorderBrush="LightGray" Grid.Row="2" Margin="0,4,0,0">
-            <Border.Visibility>
-                <Binding Path="IsLoading" ElementName="ThisWnd">
-                    <Binding.Converter>
-                        <converter:CompositeConverter>
-                            <converter:InverseBooleanConverter/>
-                            <BooleanToVisibilityConverter/>
-                        </converter:CompositeConverter>
-                    </Binding.Converter>
-                </Binding>
-            </Border.Visibility>
-            <WindowsFormsHost Margin="2">
-                <wf:WebBrowser WebBrowserShortcutsEnabled="False" x:Name="WebBrowser" Navigating="WebBrowser_OnNavigating" DocumentCompleted="WebBrowser_OnDocumentCompleted"></wf:WebBrowser>
-            </WindowsFormsHost>
+            <controls:MarkdownView x:Name="WebBrowser" Margin="2">
+            </controls:MarkdownView>
         </Border>
-        <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Loading, Please wait...">
-            <TextBlock.Visibility>
-                <Binding Path="IsLoading" ElementName="ThisWnd">
-                    <Binding.Converter>
-                        <BooleanToVisibilityConverter/>
-                    </Binding.Converter>
-                </Binding>
-            </TextBlock.Visibility>
-        </TextBlock>
     </Grid>
 </Window>
