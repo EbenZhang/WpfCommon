@@ -67,11 +67,13 @@
     </Compile>
     <Compile Include="Controls\AutoCompleteBoxEx.cs" />
     <Compile Include="Controls\AutoSizedGridView.cs" />
+    <Compile Include="Controls\PopupEx.cs" />
     <Compile Include="Converter\FalseToHiddenConverter.cs" />
     <Compile Include="Converter\IsVisableConverter.cs" />
     <Compile Include="Converter\NullEmptyToFalseConverter.cs" />
     <Compile Include="Converter\ZeroToFalseConverter.cs" />
     <Compile Include="Utils\SystemMenu.cs" />
+    <Compile Include="Utils\ZOrderHelper.cs" />
     <Compile Include="Xaml\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
