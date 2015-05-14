@@ -11,6 +11,7 @@ namespace WpfCommon.Utils
         private const int SWP_NOMOVE = 2;
         private const int SWP_NOREDRAW = 8;
         private const int SWP_NOSIZE = 1;
+        private const int SWP_NOACTIVATE = 0x0010;
         private static int HWND_NOTOPMOST = -2;
 
         [DllImport("user32", EntryPoint = "SetWindowPos")]
@@ -21,7 +22,7 @@ namespace WpfCommon.Utils
         {
             // ReSharper disable once PossibleNullReferenceException
             SetWindowPos(((HwndSource)PresentationSource.FromVisual(ctrl)).Handle,
-                    HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOREDRAW | SWP_NOSIZE);
+                    HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOREDRAW | SWP_NOSIZE | SWP_NOACTIVATE);
         }
     }
 }
