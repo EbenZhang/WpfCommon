@@ -68,6 +68,9 @@
     <Compile Include="Controls\AutoCompleteBoxEx.cs" />
     <Compile Include="Controls\AutoSizedGridView.cs" />
     <Compile Include="Controls\PopupEx.cs" />
+    <Compile Include="Controls\WebBrowserCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Converter\FalseToHiddenConverter.cs" />
     <Compile Include="Converter\IsVisableConverter.cs" />
     <Compile Include="Converter\NullEmptyToFalseConverter.cs" />
