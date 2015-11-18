@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Configuration;
+using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Forms;
@@ -33,6 +34,7 @@ namespace WpfCommon.Controls
                 BitmapSizeOptions.FromEmptyOptions());
 
             InitializeComponent();
+            WebBrowser.OpenLinkInExternalBrowser = true;
             Loaded += (sender, args) => { WebBrowser.HtmlContent = HtmlDescription; };
         }
 

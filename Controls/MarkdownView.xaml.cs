@@ -58,6 +58,8 @@ namespace WpfCommon.Controls
             {
                 e.Cancel = true;
                 Process.Start(e.Url.ToString());
+                IsLoading = false;
+                return;
             }
             IsLoading = true;
         }
