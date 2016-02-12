@@ -14,7 +14,7 @@ namespace WpfCommon.Converter
         {
             if (value is string)
             {
-                return string.IsNullOrWhiteSpace((string)value);
+                return !string.IsNullOrWhiteSpace((string)value);
             }
             return value != null;
         }
