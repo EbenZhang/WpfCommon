@@ -78,6 +78,7 @@
     <Compile Include="Utils\ObservableCollectionEx.cs" />
     <Compile Include="Utils\SystemMenu.cs" />
     <Compile Include="Utils\ZOrderHelper.cs" />
+    <Compile Include="Validations\HasSelectionValidator.cs" />
     <Compile Include="Xaml\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
