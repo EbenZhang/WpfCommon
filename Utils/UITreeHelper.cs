@@ -128,5 +128,10 @@ namespace WpfCommon.Utils
             var tbs = FindVisualChildren<AutoCompleteBoxEx>(container);
             return tbs.All(tb => tb.Valid());
         }
+        public static bool ValidateComboBoxes(this DependencyObject container)
+        {
+            var comboBoxes = FindVisualChildren<ComboBox>(container);
+            return comboBoxes.All(r => r.Valid());
+        }
     }
 }

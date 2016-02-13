@@ -75,9 +75,11 @@
     <Compile Include="Converter\IsVisableConverter.cs" />
     <Compile Include="Converter\NullEmptyToFalseConverter.cs" />
     <Compile Include="Converter\ZeroToFalseConverter.cs" />
+    <Compile Include="Extensions\ComboBoxEx.cs" />
     <Compile Include="Utils\ObservableCollectionEx.cs" />
     <Compile Include="Utils\SystemMenu.cs" />
     <Compile Include="Utils\ZOrderHelper.cs" />
+    <Compile Include="Validations\BindingValidator.cs" />
     <Compile Include="Validations\HasSelectionValidator.cs" />
     <Compile Include="Xaml\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
