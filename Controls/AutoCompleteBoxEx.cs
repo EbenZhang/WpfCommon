@@ -9,7 +9,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace WpfCommon.Controls
+namespace Nicologies.WpfCommon.Controls
 {
     public class AutoCompleteBoxEx : AutoCompleteBox
     {

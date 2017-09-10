@@ -7,8 +7,8 @@
     <ProjectGuid>{C66B81D7-C73E-41BF-8494-5CEC64B21EFE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfCommon</RootNamespace>
-    <AssemblyName>WpfCommon</AssemblyName>
+    <RootNamespace>Nicologies.WpfCommon</RootNamespace>
+    <AssemblyName>Nicologies.WpfCommon</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Controls.Primitives;
 using System.Windows.Threading;
-using WpfCommon.Utils;
+using Nicologies.WpfCommon.Utils;
 
-namespace WpfCommon.Controls
+namespace Nicologies.WpfCommon.Controls
 {
     public class PopupEx : Popup
     {

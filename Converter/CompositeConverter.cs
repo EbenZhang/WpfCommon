@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Windows;
 using System.Collections.Generic;
 
-namespace WpfCommon.Converter
+namespace Nicologies.WpfCommon.Converter
 {
     [ContentProperty("Converters")]
     public class CompositeConverter : IValueConverter

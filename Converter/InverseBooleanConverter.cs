@@ -1,6 +1,6 @@
 ﻿using System.Windows.Data;
 using System;
-namespace WpfCommon.Converter
+namespace Nicologies.WpfCommon.Converter
 {
     [ValueConversion(typeof(bool), typeof(bool))]
     public class InverseBooleanConverter : IValueConverter

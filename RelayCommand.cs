@@ -5,7 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace WpfCommon
+namespace Nicologies.WpfCommon
 {
     /// <summary>
     /// A helper class to relay the command to action

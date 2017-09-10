@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace WpfCommon.Utils
+namespace Nicologies.WpfCommon.Utils
 {
     public static class ObservableCollectionEx
     {

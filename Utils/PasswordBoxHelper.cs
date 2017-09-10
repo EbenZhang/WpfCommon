@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace WpfCommon.Utils
+namespace Nicologies.WpfCommon.Utils
 {
     public static class PasswordBoxHelper
     {

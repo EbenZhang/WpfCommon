@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using WpfCommon.Validations;
+using Nicologies.WpfCommon.Validations;
 
-namespace WpfCommon.Extensions
+namespace Nicologies.WpfCommon.Extensions
 {
     public static class ComboBoxEx
     {

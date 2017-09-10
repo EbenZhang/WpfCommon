@@ -5,7 +5,7 @@ using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Threading;
 
-namespace WpfCommon.Controls
+namespace Nicologies.WpfCommon.Controls
 {
     /// <summary>
     ///     Interaction logic for MarkdownView.xaml

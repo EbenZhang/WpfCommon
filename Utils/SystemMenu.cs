@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 
-namespace WpfCommon.Utils
+namespace Nicologies.WpfCommon.Utils
 {
     public class NoSystemMenuException : Exception
     {

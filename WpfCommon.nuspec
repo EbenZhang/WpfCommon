@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
-        <id>Nicologies.WpfCommon</id>
+        <id>$id$</id>
 
-        <version>1.0.0</version>
+        <version>$version$</version>
 
-        <authors>Nicologies</authors>
+        <authors>$author$</authors>
 
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
-        <description>Common infrastructure for WPF projects including common converters, validators, extensions and controls</description>
+        <description>$description$</description>
 
-        <copyright>Copyright ©2017 Nicologies</copyright>
+        <copyright>$copyright$</copyright>
         <projectUrl>https://github.com/EbenZhang/WpfCommon</projectUrl>
         <tags>WPF</tags>
         <dependencies>
@@ -21,6 +21,6 @@
 
     <!-- A readme.txt to display when the package is installed -->
     <files>
-        <file src=".\bin\release\WpfCommon*" />
+        <file src=".\bin\release\WpfCommon*" target="lib\net40" />
     </files>
 </package>

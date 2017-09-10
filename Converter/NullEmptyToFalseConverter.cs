@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Data;
 
-namespace WpfCommon.Converter
+namespace Nicologies.WpfCommon.Converter
 {
     [ValueConversion(typeof(object), typeof(bool))]
     public class NullEmptyToFalseConverter : IValueConverter

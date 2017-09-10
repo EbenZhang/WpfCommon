@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
 
-namespace WpfCommon.Controls
+namespace Nicologies.WpfCommon.Controls
 {
     /// <summary>
     ///     Interaction logic for AboutDialog.xaml

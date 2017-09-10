@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 
-namespace WpfCommon.Validations
+namespace Nicologies.WpfCommon.Validations
 {
     public class HasSelectionValidator : ValidationRule
     {

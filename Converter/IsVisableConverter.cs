@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace WpfCommon.Converter
+namespace Nicologies.WpfCommon.Converter
 {
     [ValueConversion(typeof(Visibility), typeof(bool))]
     public class IsVisableConverter : IValueConverter

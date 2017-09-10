@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 
-namespace WpfCommon.Controls
+namespace Nicologies.WpfCommon.Controls
 {
     /// <summary>
     /// Represents a view mode that displays data items in columns for a System.Windows.Controls.ListView control with auto sized columns based on the column content     

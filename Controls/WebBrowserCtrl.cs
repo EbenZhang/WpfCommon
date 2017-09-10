@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace WpfCommon.Controls
+namespace Nicologies.WpfCommon.Controls
 {
     [ComVisible(true), Guid("D81F90A3-8156-44F7-AD28-5ABB87003274"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     [ComImport]

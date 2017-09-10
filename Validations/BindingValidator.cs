@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Threading;
 
-namespace WpfCommon.Validations
+namespace Nicologies.WpfCommon.Validations
 {
     public static class BindingValidator
     {

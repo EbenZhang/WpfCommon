@@ -5,11 +5,11 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using WpfCommon.Controls;
-using WpfCommon.Extensions;
-using WpfCommon.Validations;
+using Nicologies.WpfCommon.Controls;
+using Nicologies.WpfCommon.Extensions;
+using Nicologies.WpfCommon.Validations;
 
-namespace WpfCommon.Utils
+namespace Nicologies.WpfCommon.Utils
 {
     public static class UiTreeHelper
     {

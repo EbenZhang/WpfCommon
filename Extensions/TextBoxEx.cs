@@ -7,9 +7,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Threading;
-using WpfCommon.Validations;
+using Nicologies.WpfCommon.Validations;
 
-namespace WpfCommon.Extensions
+namespace Nicologies.WpfCommon.Extensions
 {
     public static class TextBoxEx
     {

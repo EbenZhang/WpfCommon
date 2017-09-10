@@ -1,3 +1,3 @@
 $ErrorActionPreference = 'Stop'
 Remove-Item -Force ./dist/*nupkg -ErrorAction Ignore
-nuget pack WpfCommon.nuspec -OutputDirectory dist
+nuget pack WpfCommon.csproj -OutputDirectory dist -Prop Configuration=Release
