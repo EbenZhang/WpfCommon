@@ -12,8 +12,8 @@
         <description>$description$</description>
 
         <copyright>$copyright$</copyright>
-        <projectUrl>https://github.com/EbenZhang/WpfCommon</projectUrl>
-        <licenseUrl>https://github.com/EbenZhang/WpfCommon/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/Nicologies/WpfCommon</projectUrl>
+        <licenseUrl>https://github.com/Nicologies/WpfCommon/blob/master/LICENSE.md</licenseUrl>
 
         <tags>WPF</tags>
         <dependencies>
