@@ -18,9 +18,4 @@
             <dependency id="WPFToolkit" version="[3.5.50211.1,)" />
         </dependencies>
     </metadata>
-
-    <!-- A readme.txt to display when the package is installed -->
-    <files>
-        <file src=".\bin\release\WpfCommon*" target="lib\net40" />
-    </files>
 </package>
