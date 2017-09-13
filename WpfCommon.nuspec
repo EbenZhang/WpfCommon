@@ -13,6 +13,8 @@
 
         <copyright>$copyright$</copyright>
         <projectUrl>https://github.com/EbenZhang/WpfCommon</projectUrl>
+        <licenseUrl>https://github.com/EbenZhang/WpfCommon/blob/master/LICENSE.md</licenseUrl>
+
         <tags>WPF</tags>
         <dependencies>
             <dependency id="WPFToolkit" version="[3.5.50211.1,)" />
